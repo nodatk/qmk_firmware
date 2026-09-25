@@ -22,20 +22,6 @@
 #define LT3_QOT  LT(3, KC_QUOT)
 #define TG4      TG(4)
 
-#define SFT_1    RSFT(KC_1)
-#define SFT_2    RSFT(KC_2)
-#define SFT_3    RSFT(KC_3)
-#define SFT_4    RSFT(KC_4)
-#define SFT_5    RSFT(KC_5)
-#define SFT_6    LSFT(KC_6)
-#define SFT_7    LSFT(KC_7)
-#define SFT_8    LSFT(KC_8)
-#define SFT_9    LSFT(KC_9)
-#define SFT_0    LSFT(KC_0)
-#define SFT_LBR  LSFT(KC_LBRC)
-
-#define OSM_LSF  OSM(MOD_LSFT)
-
 // Layer scaffold -- just enough to exercise per-layer behavior (LED pattern
 // below); the actual key choices here are placeholders to replace later.
 //   Layer 0 (0,0)=TG(1): toggle into layer 1
@@ -43,22 +29,22 @@
 //   Layer 2 (0,0)=TG(2): toggle back to layer 0
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  // Layer 0, Base layer
+  // Layer 0, Arrows
   LAYOUT_orth_2x4(
-    TG(1),   KC_W,    KC_E,    KC_R,
-    KC_A,    KC_S,    KC_D,    KC_F
+    KC_LEFT, KC_UP,   KC_DOWN, KC_RGHT,
+    TG(1),   TG(2),   KC_PGUP, KC_PGDN
   ),
 
-  // Layer 1, placeholder
+  // Layer 1, Modifiers
   LAYOUT_orth_2x4(
-    TG(1),   TG(2),   KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    KC_LSFT, KC_LCTL, KC_LALT, KC_DEL,
+    KC_TRNS, KC_TRNS, KC_LALT, KC_LGUI
   ),
 
-  // Layer 2, placeholder
+  // Layer 2, Misc
   LAYOUT_orth_2x4(
-    TG(2),   KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    KC_F21,  KC_F22,  KC_F23,  KC_F24,
+    QK_BOOT, KC_TRNS, MS_BTN2, MS_BTN1
   )
 };
 
